@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% load static wagtailcore_tags wagtailuserbar wagtailimages_tags %}
+
+{% block head %}
+    <title>{{ category }} Category </title>
+{% endblock head %}
+
+
+{% block body %}
+{% include "components/navbar.html" %}
+
+<section id="recent" class="blog-category container  mt-5">
+    <h3 class="border-start ps-1 border-primary border-4 mb-3">{{ category }}</h3>
+
+    <div id="recent-category" class="d-grid blog-wrapper ">
+
+        {% for post in page %}
+            {% with post.specific as post %}
+                <a  href="{% pageurl post %}" class="blog ">
+                    {% image post.image class="w-100" width-400 %}
+                    <p>{{ post.title }}</p>
+                </a>
+            {% endwith %}    
+            
+
+        {% endfor %}       
+
+    </div>
+</section>
+
+{% include "components/footer.html" %}
+{% endblock body %}

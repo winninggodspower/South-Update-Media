@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&display=swap');
+
+*{
+    --font-mid: 1.1rem;
+    --font-small: 0.8rem;
+}
+.font-mid{
+    font-size: var(--font-mid);
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    background: rgba(0, 0, 0, 0.19);
+}
+
+.font-bodoni-moda {
+    font-family: "Bodoni Moda", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.bg-primary{
+    background: #8A9A5B !important;
+}
+
+.border-primary{
+    border-color: #8A9A5B !important;
+}
+
+.nav-link, .navbar-brand{
+    font-size: var(--font-mid)!important;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.nav-link.socials{
+    display: flex;
+    align-content: center;
+    line-height: 0px !important;
+}
+
+#category-nav-outerwrapper h4{
+    font-size: .7rem;
+}
+
+
+.nav-category-link{
+    /* height: 2rem; */
+}
+
+.blog-category{
+    margin-bottom: 3rem;
+}
+
+.blog-category h3{
+    font-size: var(--font-mid)!important;
+}
+
+#blog-wrapper{
+    grid-template-columns: 2fr 1.2fr 1.2fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px;
+
+    > img{
+        grid-row: 1/3; 
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr;
+
+        > img{
+            grid-row: 1/2; 
+        }
+
+        p{
+            font-size: 1rem !important;
+        }
+
+    }
+}
+
+.blog{
+    text-decoration: none;
+}
+
+.blog img{
+    aspect-ratio: 347/279; 
+    height: min-content;
+}
+
+.blog p{
+    margin: 0px;
+    margin-top: 0.7rem;
+    font-size: var(--font-small);
+    text-decoration: none;
+    color: black;
+}
+
+.blog-wrapper{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 100%;
+
+        p{
+            font-size: 1rem !important;
+        }
+    }
+
+    
+}

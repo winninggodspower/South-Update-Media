@@ -1,0 +1,37 @@
+{% load static %}
+<nav class="navbar navbar-expand-md navbar-light" aria-label="Second navbar example">
+    <div class="container">
+        <a class="navbar-brand" id="nav-date" href="#">Always expand</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02"
+            aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample02">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">SIGN IN/JOIN</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">ADVERTISE</a>
+                </li>
+            </ul>
+            <div class="text-dark d-flex gap-3 align-content-center">
+                <a class="nav-link socials " href="">
+                    <i class="fs-4 fa-brands fa-facebook "></i>
+                </a>
+                <a class="nav-link socials" href="">
+                    <i class="fs-4 text-dark fa-brands fa-instagram"></i>
+                </a>
+                <a class="nav-link socials" href="">
+                    <i class="fs-4 text-dark fa-brands fa-x-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script src="{% static "js/setDate.js" %}"></script>

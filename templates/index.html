@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+{% load static %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% load get_category_tag %}
+
+{% block head %}
+    <title>South Update Media</title>
+{% endblock head %}
+
+
+{% block body %}
+
+    {% include "components/navbar.html" %}
+
+    <div class="container text-end mt-2 mb-3">
+        <a class="text-dark text-decoration-none" href="">Advertise</a>
+    </div>
+
+    <section class="advertisement mb-3" style="height: 200px; width: 100%;">
+        <img class="object-fit-cover object-top w-100 h-100" src="static/assets/Rectangle 3.png" alt="">
+    </section>
+
+
+    <div id="category-nav-outerwrapper" class="bg-primary mb-5">
+        <div class="inner-wrapper container d-flex justify-content-between align-items-center py-3 text-white">
+            <div id="category-nav-brand" class="font-bodoni-moda d-none d-md-block">
+                <h4 class="fw-bolder fs-6 m-0">SUM</h4>
+                <p class="m-0">South Update Media</p>
+            </div>
+
+            <div>
+                {% get_category_model_data as category_model_data %}
+                {% for category in category_model_data %}
+                    <a class="category-nav-link text-white text-decoration-none border-end px-2" href="{% url 'category' category.slug %}">{{ category.name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+    <section id="trending" class="blog-category container">
+        <h3 class="border-start ps-1 border-primary border-4">Trending</h3>
+
+        <div id="blog-wrapper" class="d-grid">
+            <img class="w-100 h-100 object-fit-cover" src="static/assets/Rectangle 4.jpg" alt="">
+
+            <div class="blog">
+                <img class="w-100" src="static/assets/Rectangle 5.jpg" alt="">
+                <p>All govt payments must be cashless from march -NFIU-</p>
+            </div>
+
+            <div class="blog">
+                <img class="w-100" src="static/assets/Rectangle 6.jpg" alt="">
+                <p>All govt payments must be cashless from march -NFIU-</p>
+            </div>
+
+            <div class="blog">
+                <img class="w-100" src="static/assets/Rectangle 7.jpg" alt="">
+                <p>All govt payments must be cashless from march -NFIU-</p>
+            </div>
+
+            <div class="blog">
+                <img class="w-100" src="static/assets/Rectangle 8.jpg" alt="">
+                <p>All govt payments must be cashless from march -NFIU-</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section id="Feature" class="blog-category container">
+        <h3 class="border-start ps-1 border-primary border-4">Featured</h3>
+
+        <div id="feature-category" class="d-grid blog-wrapper">
+
+            {% for post in page.get_children %}
+                {% with post.specific as post %}
+                    {% if post.featured %}
+                    <a  href="{% pageurl post %}" class="blog ">
+                        {% image post.image class="w-100" width-400 %}
+                        <p>{{ post.title }}</p>
+                    </a>
+                    {% endif %}
+                {% endwith %}    
+                
+
+            {% endfor %} 
+
+    </section>
+
+
+    <section id="recent" class="blog-category container">
+        <h3 class="border-start ps-1 border-primary border-4">Recent</h3>
+
+        <div id="recent-category" class="d-grid blog-wrapper">
+
+            {% for post in page.get_children %}
+                {% with post.specific as post %}
+                    <a  href="{% pageurl post %}" class="blog ">
+                        {% image post.image class="w-100" width-400 %}
+                        <p>{{ post.title }}</p>
+                    </a>
+                {% endwith %}    
+                
+
+            {% endfor %}       
+
+        </div>
+    </section>
+
+
+    <section class="advertisement mb-3" style="height: 200px; width: 100%; margin-top: 4rem;">
+        <img class="object-fit-cover object-top w-100 h-100" src="static/assets/Rectangle 3.png" alt="">
+    </section>
+
+    {% include "components/footer.html" %}
+{% endblock body %}
