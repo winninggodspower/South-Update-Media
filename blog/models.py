@@ -35,7 +35,9 @@ class BlogPage(Page):
     body = RichTextField(blank=True)
 
     category = ParentalKey(Category, on_delete=models.SET_NULL, blank=True, null=True)
+
     featured = models.BooleanField(default=False)
+    trending = models.BooleanField(default=False)
 
     @classmethod
     def get_category_model(self):
