@@ -1,9 +1,11 @@
-from wagtail.contrib.modeladmin.options import (
-    ModelAdmin, modeladmin_register)
+from wagtail.snippets.models import register_snippet
+from wagtail.snippets.views.snippets import SnippetViewSet
+
+
 from .models import Category
 
 
-class CategoryAdmin(ModelAdmin):
+class CategoryAdmin(SnippetViewSet):
     model = Category
     # base_url_path = 'bookadmin' # customise the URL from default to admin/bookadmin
     menu_label = 'Category'  # ditch this to use verbose_name_plural from model
@@ -17,4 +19,4 @@ class CategoryAdmin(ModelAdmin):
     search_fields = ('name')
 
 # Now you just need to register your customised ModelAdmin class with Wagtail
-modeladmin_register(CategoryAdmin)
+register_snippet(CategoryAdmin)

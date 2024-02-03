@@ -161,9 +161,6 @@ MEDIA_URL = "/media/"
 
 WAGTAIL_SITE_NAME = "southupdatemedia.com"
 
-SECURE_HSTS_SECONDS = True
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
 
 # Search
 # https://docs.wagtail.org/en/stable/topics/search/backends.html
