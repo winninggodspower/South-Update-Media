@@ -1,10 +1,13 @@
 anyascii==0.3.2
 asgiref==3.7.2
 beautifulsoup4==4.11.2
+Brotli==1.1.0
 certifi==2024.2.2
 charset-normalizer==3.3.2
+csscompressor==0.9.5
 defusedxml==0.7.1
-Django==5.0.1
+Django==4.0
+django-compress-staticfiles==1.0.1b0
 django-filter==23.5
 django-modelcluster==6.2.1
 django-permissionedforms==0.1
@@ -23,6 +26,7 @@ pillow-heif==0.14.0
 python-dotenv==1.0.1
 pytz==2024.1
 requests==2.31.0
+rjsmin==1.2.2
 six==1.16.0
 soupsieve==2.5
 sqlparse==0.4.4
@@ -32,4 +36,3 @@ urllib3==2.2.0
 wagtail==5.2.3
 webencodings==0.5.1
 Willow==1.6.3
-django-compress-staticfiles
