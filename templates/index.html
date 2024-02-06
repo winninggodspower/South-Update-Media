@@ -43,26 +43,16 @@
 
         <div id="blog-wrapper" class="d-grid">
             <img class="w-100 h-100 object-fit-cover" src="static/assets/Rectangle 4.jpg" alt="">
-
-            <div class="blog">
-                <img class="w-100" src="static/assets/Rectangle 5.jpg" alt="">
-                <p>All govt payments must be cashless from march -NFIU-</p>
-            </div>
-
-            <div class="blog">
-                <img class="w-100" src="static/assets/Rectangle 6.jpg" alt="">
-                <p>All govt payments must be cashless from march -NFIU-</p>
-            </div>
-
-            <div class="blog">
-                <img class="w-100" src="static/assets/Rectangle 7.jpg" alt="">
-                <p>All govt payments must be cashless from march -NFIU-</p>
-            </div>
-
-            <div class="blog">
-                <img class="w-100" src="static/assets/Rectangle 8.jpg" alt="">
-                <p>All govt payments must be cashless from march -NFIU-</p>
-            </div>
+            {% for post in page.get_children|slice:":4" %}
+            {% with post.specific as post %}
+                {% if post.trending %}
+                <a  href="{% pageurl post %}" class="blog ">
+                    {% image post.image class="w-100" width-400 %}
+                    <p>{{ post.title }}</p>
+                </a>
+                {% endif %}
+            {% endwith %}    
+            {% endfor %} 
         </div>
 
     </section>
