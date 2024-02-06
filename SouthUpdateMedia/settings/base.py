@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 SECRET_KEY = os.environ["SECRET_KEY"]
 
 # SECURITY WARNING: define the correct hosts in production!
-ALLOWED_HOSTS = ["southupdatemedia.com", "127.0.0.1", 'localhost']
+# ALLOWED_HOSTS = ["*"]
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
