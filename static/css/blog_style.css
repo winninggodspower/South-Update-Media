@@ -7,6 +7,12 @@ h1{
     line-height: 1.2;
 }
 
+#post-body img{
+  max-width: 100%;
+  object-fit: contain;
+  height: min-content;
+}
+
 iframe{
   aspect-ratio: 16/9 !important;
   width: 100% !important;

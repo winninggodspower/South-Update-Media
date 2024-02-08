@@ -24,7 +24,7 @@
     <header class="masthead" style="background-image: url( {{ page.image.file.url }} )">
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="col-md-10 ">
                     <div class="post-heading">
                         <h1>{{ page.title }}</h1>
                         <h2 class="subheading"><div class="intro">{{ page.intro }}</div></h2>
@@ -40,9 +40,9 @@
     
     <div class="container px-4 px-lg-5 mb-5 text-dark">
         <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
+            <div id="post-body" class="col-md-10 col-lg-8 ">
                 {{ page.body|richtext }}
-                <p><a href="{{ page.get_parent.url }}">Return to blog</a></p>
+                <p><a href="{{ page.get_parent.url }}">Return to home</a></p>
                 
             </div>
         </div>
